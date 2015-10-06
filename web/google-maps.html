@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+	var myLatLngNewMum = {lat: 19.033250, lng: 73.024370};
+	var myLatLngDom = {lat: 19.205531, lng: 73.096222};
+
+        var mapOptions = {
+          center: new google.maps.LatLng(19.033250, 73.024370),
+          zoom: 10,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+	
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+	 var marker = new google.maps.Marker({
+	    position: myLatLngNewMum,
+	    map: map,
+	    title: 'Hello World!'
+	  });
+	 var marker = new google.maps.Marker({
+		    position: myLatLngDom,
+		    map: map,
+		    title: 'Hello World!'
+		  });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
